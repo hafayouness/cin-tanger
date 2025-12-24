@@ -1,26 +1,23 @@
 import express from "express";
-import dotenv from "dotenv";
+import movieRoutes from "./routes/movieRoutes.js";
 import { testConnection } from "./config/database.js";
-import cors from "cors";
-
-
-dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+// Routes
+app.use("/movies", movieRoutes);
 
-
+// Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, "0.0.0.0", async () => {
-  await testConnection();
-  console.log(`🚀 Serveur démarré sur ${PORT}`);
-});
+
+const startServer = async () => {
+    await testConnection();
+
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+    });
+};
+
+startServer();
