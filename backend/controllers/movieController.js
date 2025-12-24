@@ -1,98 +1,126 @@
 import Movie from "../models/Movie.js";
 
-// CREATE
-export const createMovie = async (req, res) => {
-    try {
-        const {
-            title,
-            genre,
-            duration,
-            description,
-            director,
-            release_date,
-            image,
-        } = req.body;
-
-        if (!genre || !director) {
-            return res.status(400).json({
-                error: "genre et director sont obligatoires",
-            });
-        }
-
-        const movie = await Movie.create({
-            title,
-            genre,
-            duration,
-            description,
-            director,
-            release_date,
-            image,
-        });
-
-        res.status(201).json(movie);
-    } catch (error) {
-        console.error("❌ Create movie:", error);
-        res.status(500).json({ error: "Internal server error" });
-    }
-};
-
-// READ ALL
+// GET - Tous les films
 export const getAllMovies = async (req, res) => {
-    try {
-        const movies = await Movie.findAll();
-        res.status(200).json(movies);
-    } catch (error) {
-        console.error("❌ Get movies:", error);
-        res.status(500).json({ error: "Internal server error" });
-    }
+  try {
+    const movies = await Movie.findAll({
+      order: [["createdAt", "DESC"]],
+    });
+    res.status(200).json({
+      success: true,
+      count: movies.length,
+      data: movies,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
-// READ ONE
+// GET - Film par ID
 export const getMovieById = async (req, res) => {
-    try {
-        const movie = await Movie.findByPk(req.params.id);
-
-        if (!movie) {
-            return res.status(404).json({ error: "Movie not found" });
-        }
-
-        res.status(200).json(movie);
-    } catch (error) {
-        console.error("❌ Get movie:", error);
-        res.status(500).json({ error: "Internal server error" });
+  try {
+    const movie = await Movie.findByPk(req.params.id);
+    if (!movie) {
+      return res.status(404).json({
+        success: false,
+        error: "Film non trouvé",
+      });
     }
+    res.status(200).json({
+      success: true,
+      data: movie,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
-// UPDATE
+// POST - Créer un film
+export const createMovie = async (req, res) => {
+  try {
+    const { title, duration, description, director, release_date, image } =
+      req.body;
+
+    if (!title || !director) {
+      return res.status(400).json({
+        success: false,
+        error: "Le titre et le réalisateur sont obligatoires",
+      });
+    }
+
+    const movie = await Movie.create({
+      title,
+      duration,
+      description,
+      director,
+      release_date,
+      image,
+    });
+
+    res.status(201).json({
+      success: true,
+      data: movie,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
+// PUT - Modifier un film
 export const updateMovie = async (req, res) => {
-    try {
-        const movie = await Movie.findByPk(req.params.id);
-
-        if (!movie) {
-            return res.status(404).json({ error: "Movie not found" });
-        }
-
-        await movie.update(req.body);
-        res.status(200).json(movie);
-    } catch (error) {
-        console.error("❌ Update movie:", error);
-        res.status(500).json({ error: "Internal server error" });
+  try {
+    const movie = await Movie.findByPk(req.params.id);
+    if (!movie) {
+      return res.status(404).json({
+        success: false,
+        error: "Film non trouvé",
+      });
     }
+
+    await movie.update(req.body);
+
+    res.status(200).json({
+      success: true,
+      data: movie,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
-// DELETE
+// DELETE - Supprimer un film
 export const deleteMovie = async (req, res) => {
-    try {
-        const movie = await Movie.findByPk(req.params.id);
-
-        if (!movie) {
-            return res.status(404).json({ error: "Movie not found" });
-        }
-
-        await movie.destroy();
-        res.status(200).json({ message: "Movie deleted successfully" });
-    } catch (error) {
-        console.error("❌ Delete movie:", error);
-        res.status(500).json({ error: "Internal server error" });
+  try {
+    const movie = await Movie.findByPk(req.params.id);
+    if (!movie) {
+      return res.status(404).json({
+        success: false,
+        error: "Film non trouvé",
+      });
     }
+
+    await movie.destroy();
+
+    res.status(200).json({
+      success: true,
+      message: "Film supprimé",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };

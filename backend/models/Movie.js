@@ -10,11 +10,7 @@ const Movie = sequelize.define(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    genre: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
     duration: {
@@ -26,7 +22,7 @@ const Movie = sequelize.define(
       allowNull: true,
     },
     director: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
     release_date: {
@@ -34,12 +30,12 @@ const Movie = sequelize.define(
       allowNull: true,
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(500),
       allowNull: true,
     },
   },
   {
-    tableName: "movies",
+    tableName: "Movies",
     timestamps: true,
   }
 );
