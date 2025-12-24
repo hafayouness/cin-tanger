@@ -1,3 +1,4 @@
+
 import Booking from "../models/Booking.js";
 import Session from "../models/Session.js";
 import Movie from "../models/Movie.js";
@@ -285,3 +286,4 @@ export const deleteBooking = async (req, res) => {
     });
   }
 };
+
