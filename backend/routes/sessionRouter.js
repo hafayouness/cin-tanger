@@ -1,16 +1,25 @@
 import express from "express";
 import {
-  getAllShowtimes,
-  getShowtimeById,
-} from "../controllers/sessionController.js";
 
+
+
+
+  getAllSessions,
+  getSessionById,
+  createSession,
+  updateSession,
+  deleteSession,
+  getSessionsByMovie,
+} from "../controllers/sessionController.js";
 
 const router = express.Router();
 
-router.get("/showtimes", getAllShowtimes);
-router.get("/showtimes/:id", getShowtimeById);
-
-
+router.get("/", getAllSessions);
+router.get("/:id", getSessionById);
+router.get("/movie/:movieId", getSessionsByMovie);
+router.post("/", createSession);
+router.put("/:id", updateSession);
+router.delete("/:id", deleteSession);
 
 
 export default router;
