@@ -11,6 +11,9 @@ import movieRoutes from "./routes/movieRouter.js";
 import salleRoutes from "./routes/salleRouter.js";
 import sessionRoutes from "./routes/sessionRouter.js";
 import bookingRoutes from "./routes/bookingRouter.js";
+
+
+
 dotenv.config();
 
 const app = express();
@@ -18,7 +21,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api",sessionRouts)
+
 app.use(
   cors({
     origin: "*",
