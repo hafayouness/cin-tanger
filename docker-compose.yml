@@ -5,7 +5,7 @@ services:
     build: ./backend
     container_name: cinema-backend
     ports:
-      - "5000:5000"
+      - "80:5000"
     env_file:
       - ./backend/.env
     volumes:
@@ -21,7 +21,7 @@ services:
     environment:
       POSTGRES_DB: cinema_db
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
+      POSTGRES_PASSWORD: 123456
     ports:
       - "54321:5432"
     volumes:
