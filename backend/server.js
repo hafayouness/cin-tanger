@@ -8,6 +8,9 @@ import movieRoutes from "./routes/movieRouter.js";
 import salleRoutes from "./routes/salleRouter.js";
 import sessionRoutes from "./routes/sessionRouter.js";
 import bookingRoutes from "./routes/bookingRouter.js";
+
+
+
 dotenv.config();
 
 const app = express();
