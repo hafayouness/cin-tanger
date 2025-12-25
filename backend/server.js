@@ -38,7 +38,6 @@ app.get("/health", (req, res) => {
     res.json({ status: "OK", timestamp: new Date() });
 });
 
-// Routes API
 app.use("/api/movies", movieRoutes);
 app.use("/api/salles", salleRoutes);
 app.use("/api/sessions", sessionRoutes);
@@ -56,7 +55,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Démarrage du serveur
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", async () => {
@@ -65,7 +63,7 @@ app.listen(PORT, "0.0.0.0", async () => {
     console.log(`📍 URL: http://localhost:${PORT}`);
     console.log(`${"=".repeat(50)}\n`);
 
-    // Tester la connexion à la base de données
+   
     await testConnection();
 
     console.log(`\n${"=".repeat(50)}`);

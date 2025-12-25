@@ -10,32 +10,46 @@ const Movie = sequelize.define(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     duration: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
     director: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     release_date: {
       type: DataTypes.DATE,
       allowNull: true,
     },
     image: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING,
       allowNull: true,
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: "Genre du film (Action, Drama, Sci-Fi, etc.)",
+    },
+    rating: {
+      type: DataTypes.DECIMAL(2, 1),
+      allowNull: true,
+      validate: {
+        min: 0,
+        max: 10,
+      },
+      comment: "Note du film sur 10",
     },
   },
   {
-    tableName: "Movies",
+    tableName: "movies",
     timestamps: true,
   }
 );
