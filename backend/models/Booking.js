@@ -63,7 +63,6 @@ const Booking = sequelize.define(
   }
 );
 
-// Relation
 Booking.belongsTo(Session, { foreignKey: "session_id", as: "session" });
 
 export default Booking;
