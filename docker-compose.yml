@@ -5,11 +5,11 @@ services:
     build: ./backend
     container_name: cinema-backend
     ports:
-      - "80:5000"
+      - "5000:5000"
     env_file:
       - ./backend/.env
     volumes:
-      - ./backend:/app
+      - ./backend:/appGI
       - /app/node_modules
     depends_on:
       - db
