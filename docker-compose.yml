@@ -9,7 +9,7 @@ services:
     env_file:
       - ./backend/.env
     volumes:
-      - ./backend:/app
+      - ./backend:/appGI
       - /app/node_modules
     depends_on:
       - db
