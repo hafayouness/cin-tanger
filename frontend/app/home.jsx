@@ -13,8 +13,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { useGetAllMovies } from "../servis/Movies/query";
 import { useFonts } from "expo-font";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [fontsLoaded] = useFonts({
     CarterOne: require("../assets/CarterOne-Regular.ttf"),
   });
@@ -90,7 +92,9 @@ export default function HomeScreen() {
           contentContainerStyle={styles.moviesList}
           columnWrapperStyle={styles.moviesRow}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.card} activeOpacity={0.9}>
+            <TouchableOpacity style={styles.card} activeOpacity={0.9}
+              onPress={() => router.push(`/movies/${item.id}`)}
+            >
               <View style={styles.imageContainer}>
                 <Image
                   source={{ uri: item.image }}

@@ -11,7 +11,7 @@ import Animated, {
 export default function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
 
-  // Shared values
+
   const logoOpacity = useSharedValue(0);
   const textOpacity = useSharedValue(0);
 
@@ -72,7 +72,7 @@ export default function SplashScreen() {
     );
   }
 
- 
+
 }
 
 const styles = StyleSheet.create({
