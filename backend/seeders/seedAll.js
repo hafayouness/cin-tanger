@@ -18,8 +18,9 @@ const seedAll = async () => {
           description: "Un voleur infiltre les rêves.",
           director: "Christopher Nolan",
           release_date: "2010-07-16",
-          image: "inception.jpg",
-          type: "Sci-Fi/Thriller",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+          type: "Sci-Fi",
           rating: 8.8,
         },
         {
@@ -28,8 +29,9 @@ const seedAll = async () => {
           description: "Voyage spatial pour sauver l'humanité.",
           director: "Christopher Nolan",
           release_date: "2014-11-07",
-          image: "interstellar.jpg",
-          type: "Sci-Fi/Adventure",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+          type: "Sci-Fi",
           rating: 8.7,
         },
         {
@@ -38,8 +40,9 @@ const seedAll = async () => {
           description: "Batman contre le Joker.",
           director: "Christopher Nolan",
           release_date: "2008-07-18",
-          image: "dark_knight.jpg",
-          type: "Action/Crime",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+          type: "Action",
           rating: 9.0,
         },
         {
@@ -48,8 +51,9 @@ const seedAll = async () => {
           description: "Un monde extraterrestre fascinant.",
           director: "James Cameron",
           release_date: "2009-12-18",
-          image: "avatar.jpg",
-          type: "Sci-Fi/Adventure",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+          type: "Sci-Fi",
           rating: 7.9,
         },
         {
@@ -58,8 +62,9 @@ const seedAll = async () => {
           description: "Une histoire d'amour tragique.",
           director: "James Cameron",
           release_date: "1997-12-19",
-          image: "titanic.jpg",
-          type: "Romance/Drama",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+          type: "Romance",
           rating: 7.9,
         },
         {
@@ -68,8 +73,9 @@ const seedAll = async () => {
           description: "Un général romain devenu gladiateur.",
           director: "Ridley Scott",
           release_date: "2000-05-05",
-          image: "gladiator.jpg",
-          type: "Action/Drama",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+          type: "Action",
           rating: 8.5,
         },
         {
@@ -78,8 +84,9 @@ const seedAll = async () => {
           description: "La réalité n'est qu'une illusion.",
           director: "Wachowski Sisters",
           release_date: "1999-03-31",
-          image: "matrix.jpg",
-          type: "Sci-Fi/Action",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+          type: "Sci-Fi",
           rating: 8.7,
         },
         {
@@ -88,8 +95,9 @@ const seedAll = async () => {
           description: "La naissance d'un criminel.",
           director: "Todd Phillips",
           release_date: "2019-10-04",
-          image: "joker.jpg",
-          type: "Drama/Thriller",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+          type: "Drama",
           rating: 8.4,
         },
         {
@@ -98,8 +106,9 @@ const seedAll = async () => {
           description: "Une vie extraordinaire.",
           director: "Robert Zemeckis",
           release_date: "1994-07-06",
-          image: "forrest_gump.jpg",
-          type: "Drama/Romance",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+          type: "Drama",
           rating: 8.8,
         },
         {
@@ -108,9 +117,120 @@ const seedAll = async () => {
           description: "La bataille finale des Avengers.",
           director: "Russo Brothers",
           release_date: "2019-04-26",
-          image: "endgame.jpg",
-          type: "Action/Adventure",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+          type: "Action",
           rating: 8.4,
+        },
+        {
+          title: "Pulp Fiction",
+          duration: 154,
+          description: "Des histoires entrelacées dans le crime.",
+          director: "Quentin Tarantino",
+          release_date: "1994-10-14",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+          type: "Crime",
+          rating: 8.9,
+        },
+        {
+          title: "The Shawshank Redemption",
+          duration: 142,
+          description: "L'espoir dans une prison.",
+          director: "Frank Darabont",
+          release_date: "1994-09-23",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg",
+          type: "Drama",
+          rating: 9.3,
+        },
+        {
+          title: "The Godfather",
+          duration: 175,
+          description: "La saga d'une famille mafieuse.",
+          director: "Francis Ford Coppola",
+          release_date: "1972-03-24",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+          type: "Crime",
+          rating: 9.2,
+        },
+        {
+          title: "Fight Club",
+          duration: 139,
+          description: "Un club de combat clandestin.",
+          director: "David Fincher",
+          release_date: "1999-10-15",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+          type: "Drama",
+          rating: 8.8,
+        },
+        {
+          title: "The Lion King",
+          duration: 88,
+          description: "Un lionceau devient roi.",
+          director: "Roger Allers, Rob Minkoff",
+          release_date: "1994-06-24",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg",
+          type: "Animation",
+          rating: 8.5,
+        },
+        {
+          title: "Spider-Man: No Way Home",
+          duration: 148,
+          description: "Spider-Man face au multivers.",
+          director: "Jon Watts",
+          release_date: "2021-12-17",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_SX300.jpg",
+          type: "Action",
+          rating: 8.2,
+        },
+        {
+          title: "Dune",
+          duration: 155,
+          description: "Une planète désertique et des intrigues.",
+          director: "Denis Villeneuve",
+          release_date: "2021-10-22",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+          type: "Sci-Fi",
+          rating: 8.0,
+        },
+        {
+          title: "Toy Story",
+          duration: 81,
+          description: "Des jouets prennent vie.",
+          director: "John Lasseter",
+          release_date: "1995-11-22",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg",
+          type: "Comedy",
+          rating: 8.3,
+        },
+        {
+          title: "Parasite",
+          duration: 132,
+          description: "Une famille s'infiltre chez les riches.",
+          director: "Bong Joon Ho",
+          release_date: "2019-05-30",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+          type: "Drama/Thriller",
+          rating: 8.5,
+        },
+        {
+          title: "Oppenheimer",
+          duration: 180,
+          description: "L'histoire du père de la bombe atomique.",
+          director: "Christopher Nolan",
+          release_date: "2023-07-21",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_SX300.jpg",
+          type: "Biography",
+          rating: 8.3,
         },
       ],
       { returning: true }
