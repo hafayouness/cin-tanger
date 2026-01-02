@@ -7,7 +7,8 @@ import { instance }  from "../instance.js";
 export function useGetAllMovies(){
      return useQuery({
          queryKey:["Movie"],
-         queryFn:()=> instance.get("/movies/").then(res=>res.data).catch(error=>{
+         queryFn:()=> instance.get("/movies").then(res=>res.data).catch(error=>{
+            console.log(error.message);
             throw new Error(error.message)
 
         })
