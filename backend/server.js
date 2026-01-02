@@ -2,7 +2,7 @@ import express from "express";
 import { testConnection } from "./config/database.js";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import morgan from "morgan";
 
 import movieRoutes from "./routes/movieRouter.js";
 import salleRoutes from "./routes/salleRouter.js";
@@ -14,7 +14,7 @@ import bookingRoutes from "./routes/bookingRouter.js";
 dotenv.config();
 
 const app = express();
-
+app.use(morgan('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

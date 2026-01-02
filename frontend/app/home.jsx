@@ -20,6 +20,7 @@ export default function HomeScreen() {
   });
 
   const { data, isLoading, isError } = useGetAllMovies();
+  console.log(data);
   const movies = data?.data || [];
 
   if (!fontsLoaded) return null;
