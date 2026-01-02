@@ -15,6 +15,7 @@ export default function Layout() {
         <Stack.Screen name="home" options={{ headerShown: false }} />
         <Stack.Screen name="movies/[id]" options={{ headerShown: false }} />
         <Stack.Screen name="booking/[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="myticket" options={{ headerShown: false }} />
 
 
       </Stack>

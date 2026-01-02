@@ -10,7 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { useGetAllMovies } from "../servis/Movies/query";
+import { useGetAllMovies } from "../servis/Movies/query.js";
 import { useFonts } from "expo-font";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
@@ -56,7 +56,7 @@ export default function HomeScreen() {
               <Text style={styles.username}>Siham </Text>
             </View>
 
-            <TouchableOpacity style={styles.ticketBtn}>
+            <TouchableOpacity style={styles.ticketBtn} onPress={()=>router.push("/myticket")}>
               <Ionicons name="ticket" size={24} color="#e50914" />
             </TouchableOpacity>
           </View>
