@@ -1,6 +1,5 @@
 import Salle from "../models/Salle.js";
 
-// GET - Toutes les salles
 export const getAllSalles = async (req, res) => {
   try {
     const salles = await Salle.findAll({
@@ -19,7 +18,6 @@ export const getAllSalles = async (req, res) => {
   }
 };
 
-// GET - Salle par ID
 export const getSalleById = async (req, res) => {
   try {
     const salle = await Salle.findByPk(req.params.id);
@@ -41,7 +39,6 @@ export const getSalleById = async (req, res) => {
   }
 };
 
-// POST - Créer une salle
 export const createSalle = async (req, res) => {
   try {
     const { name, capacity, features } = req.body;
@@ -84,7 +81,6 @@ export const createSalle = async (req, res) => {
   }
 };
 
-// PUT - Modifier une salle
 export const updateSalle = async (req, res) => {
   try {
     const salle = await Salle.findByPk(req.params.id);
@@ -122,7 +118,6 @@ export const updateSalle = async (req, res) => {
   }
 };
 
-// DELETE - Supprimer une salle
 export const deleteSalle = async (req, res) => {
   try {
     const salle = await Salle.findByPk(req.params.id);

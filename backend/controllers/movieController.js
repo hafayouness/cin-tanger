@@ -1,6 +1,5 @@
 import Movie from "../models/Movie.js";
 
-// GET - Tous les films
 export const getAllMovies = async (req, res) => {
   try {
     const movies = await Movie.findAll({
@@ -19,7 +18,6 @@ export const getAllMovies = async (req, res) => {
   }
 };
 
-// GET - Film par ID
 export const getMovieById = async (req, res) => {
   try {
     const movie = await Movie.findByPk(req.params.id);
@@ -41,7 +39,6 @@ export const getMovieById = async (req, res) => {
   }
 };
 
-// POST - Créer un film
 export const createMovie = async (req, res) => {
   try {
     const { title, duration, description, director, release_date, image } =
@@ -75,7 +72,6 @@ export const createMovie = async (req, res) => {
   }
 };
 
-// PUT - Modifier un film
 export const updateMovie = async (req, res) => {
   try {
     const movie = await Movie.findByPk(req.params.id);
@@ -100,7 +96,6 @@ export const updateMovie = async (req, res) => {
   }
 };
 
-// DELETE - Supprimer un film
 export const deleteMovie = async (req, res) => {
   try {
     const movie = await Movie.findByPk(req.params.id);
