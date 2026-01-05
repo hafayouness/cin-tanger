@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
-import swaggerSpec from "./config/swagger.js"; //
+import swaggerSpec from "./config/swagger.js";
 
 import movieRoutes from "./routes/movieRouter.js";
 import salleRoutes from "./routes/salleRouter.js";
