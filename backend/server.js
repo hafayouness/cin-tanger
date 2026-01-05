@@ -3,6 +3,8 @@ import { testConnection } from "./config/database.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger.js"; //
 
 import movieRoutes from "./routes/movieRouter.js";
 import salleRoutes from "./routes/salleRouter.js";
@@ -12,9 +14,11 @@ import bookingRoutes from "./routes/bookingRouter.js";
 dotenv.config();
 
 const app = express();
-app.use(morgan('dev'))
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(
   cors({
@@ -29,6 +33,10 @@ app.get("/", (req, res) => {
     message: "🎬 API Movies - Serveur actif",
     endpoints: {
       movies: "/api/movies",
+      salles: "/api/salles",
+      sessions: "/api/sessions",
+      bookings: "/api/bookings",
+      docs: "/api-docs",
       health: "/health",
     },
   });
@@ -63,6 +71,7 @@ if (process.env.NODE_ENV !== "test") {
     console.log(`\n${"=".repeat(50)}`);
     console.log(`🚀 Serveur démarré sur le port ${PORT}`);
     console.log(`📍 URL: http://localhost:${PORT}`);
+    console.log(`📚 Swagger Docs: http://localhost:${PORT}/api-docs`);
     console.log(`${"=".repeat(50)}\n`);
 
     await testConnection();
